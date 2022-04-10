@@ -66,36 +66,6 @@ def sgd_decr_test(your_result):
     print("Тесты пройдены!")
     return 0
 
-def l_svrg_test(your_result):
-    with open("dump/l_svrg_test.txt", 'rb') as file:
-        true_result = pickle.load(file)
-    
-    if norm(true_result['last_iter'] - your_result['last_iter']) > 1e-6:
-        print("Некорректная последняя точка")
-        return 1
-    for idx, item in enumerate(your_result['func_vals']):
-        if abs(true_result['func_vals'][idx] - item) > 1e-6:
-            print("Некорректное сохранённое значение в массиве значений на позиции ", idx)
-            return 1
-    
-    print("Тесты пройдены!")
-    return 0
-
-def saga_test(your_result):
-    with open("dump/saga_test.txt", 'rb') as file:
-        true_result = pickle.load(file)
-    
-    if norm(true_result['last_iter'] - your_result['last_iter']) > 1e-1:
-        print("Некорректная последняя точка")
-        return 1
-    for idx, item in enumerate(your_result['func_vals']):
-        if abs(true_result['func_vals'][idx] - item) > 1e-3:
-            print("Некорректное сохранённое значение в массиве значений на позиции ", idx)
-            return 1
-    
-    print("Тесты пройдены!")
-    return 0
-
 def prox_gd_test(your_result):
     with open("dump/prox_gd_test.txt", 'rb') as file:
         true_result = pickle.load(file)
@@ -128,67 +98,6 @@ def fista_test(your_result):
 
 def gd_test(your_result):
     with open("dump/gd_test.txt", 'rb') as file:
-        true_result = pickle.load(file)
-    
-    if norm(true_result['last_iter'] - your_result['last_iter']) > 1e-6:
-        print("Некорректная последняя точка")
-        return 1
-    for idx, item in enumerate(your_result['func_vals']):
-        if abs(true_result['func_vals'][idx] - item) > 1e-6:
-            print("Некорректное сохранённое значение в массиве значений на позиции ", idx)
-            return 1
-    
-    print("Тесты пройдены!")
-    return 0
-
-
-def sgd_ls_test(your_result):
-    with open("dump/sgd_ls_test.txt", 'rb') as file:
-        true_result = pickle.load(file)
-    
-    if norm(true_result['last_iter'] - your_result['last_iter']) > 1e-6:
-        print("Некорректная последняя точка")
-        return 1
-    for idx, item in enumerate(your_result['func_vals']):
-        if abs(true_result['func_vals'][idx] - item) > 1e-6:
-            print("Некорректное сохранённое значение в массиве значений на позиции ", idx)
-            return 1
-    
-    print("Тесты пройдены!")
-    return 0
-
-def svrg_ls_test(your_result):
-    with open("dump/svrg_ls_test.txt", 'rb') as file:
-        true_result = pickle.load(file)
-    
-    if norm(true_result['last_iter'] - your_result['last_iter']) > 1e-6:
-        print("Некорректная последняя точка")
-        return 1
-    for idx, item in enumerate(your_result['func_vals']):
-        if abs(true_result['func_vals'][idx] - item) > 1e-6:
-            print("Некорректное сохранённое значение в массиве значений на позиции ", idx)
-            return 1
-    
-    print("Тесты пройдены!")
-    return 0
-
-def sgd_star_ls_test(your_result):
-    with open("dump/sgd_star_ls_test.txt", 'rb') as file:
-        true_result = pickle.load(file)
-    
-    if norm(true_result['last_iter'] - your_result['last_iter']) > 1e-6:
-        print("Некорректная последняя точка")
-        return 1
-    for idx, item in enumerate(your_result['func_vals']):
-        if abs(true_result['func_vals'][idx] - item) > 1e-6:
-            print("Некорректное сохранённое значение в массиве значений на позиции ", idx)
-            return 1
-    
-    print("Тесты пройдены!")
-    return 0
-
-def slcm_ls_test(your_result):
-    with open("dump/slcm_ls_test.txt", 'rb') as file:
         true_result = pickle.load(file)
     
     if norm(true_result['last_iter'] - your_result['last_iter']) > 1e-6:
