@@ -1,1 +1,9 @@
-## Practical homeworks for MADE course on Optimization Methods in Machine Learning
+# Optimization Methods in Machine Learning
+
+Proximal Stochastic methods
+- Gradient descent
+- FISTA
+- SVRG
+- Proximal Gradient descent
+- SGD with constant step size
+- SGD with decreasing step size
