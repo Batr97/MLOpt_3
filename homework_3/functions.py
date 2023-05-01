@@ -64,3 +64,6 @@ def r(x, l1):
 
 def F(x, args):
     return logreg_loss(x, args) + r(x, args[4])
+
+def prox_R(x, lamb):
+    return np.sign(x) * np.maximum(np.abs(x)- lamb, 0)
